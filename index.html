@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Menu</title>
+</head>
+<body>
+    
+<header>
+
+    <div id="title-button">
+         <h1>Menu</h1>
+    </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#section-breakfast">Breakfast</a></li>
+                    <li><a href="#section-lunch">Lunch</a></li>
+                    <li><a href="#section-dinner">Dinner</a></li>
+                    <li><a href="#section-snacks">Snacks</a></li>
+                </ul>
+            </nav>
+
+    <nav id="nav-search">
+        <ul>
+            <div><button type= "button" id="export-csv">Export CSV</button></div>
+
+            <div><button type= "button" id="export-discord">Export Discord</button></div>
+
+            <div><button id="clear-selections">Clear Selected</button></div>
+
+            <div><input type="search" id="search"><button type="button">
+                Search
+            </button></div>
+        </ul>
+    </nav>
+
+</header>
+
+
+<main>
+
+<!-- Ticked Items section -->
+
+<!-- Button -->
+<button id="toggle-ticked-items">Show Ticked Items</button>
+<!-- Contents -->
+    <div class="ticked-container">
+        <div id="ticked-items" style="display: none;">
+            Currently ticked items: None
+        </div>
+    </div>
+
+<!-- Breakfast -->
+<section class="section-style" id="section-breakfast">
+    <h2>Breakfast</h2>
+            <div id="breakfast-checkboxes" class="flex-container"></div>      
+ </section>
+
+<!-- Lunch -->
+    <section class="section-style" id="section-lunch">
+        <h2>Lunch</h2>
+        <div id="lunch-checkboxes" class="flex-container"></div>    
+    </section>
+
+<!-- Dinner -->
+<section class="section-style" id="section-dinner">
+    <h2>Dinner</h2>
+    <div id="dinner-checkboxes" class="flex-container"></div>    
+</section>
+
+<!-- Snacks -->
+<section class="section-style" id="section-snacks">
+    <h2>Snacks</h2>
+    <div id="snacks-checkboxes" class="flex-container"></div>    
+</section>
+
+
+</main>
+
+    <script src="script.js"></script>
+</body>
+</html>

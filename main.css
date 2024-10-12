@@ -1,0 +1,120 @@
+/* Body */
+body {
+    background: linear-gradient(to bottom, rgb(47, 52, 80), rgb(2, 12, 15));
+    height: auto;
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-width: min-content;
+}
+
+/* Buttons */
+button {
+    background-color:  rgb(68, 64, 102);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin: 3px;
+    padding: 3px 10px;
+}
+
+.light-mode {
+    /* background: linear-gradient(to top, #424B54, #93A8AC); */
+    background: linear-gradient(to top, #915d5e, #E2B4BD);
+}
+
+/* Nav Bar */
+.navigation ul {
+    list-style: none;              /* Remove bullet points */
+    padding: 0;                    /* Remove padding */
+    margin: 0;                     /* Remove margin */
+    display: flex;                 /* Set the layout to flexbox */
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Space the items evenly across the screen */
+    background-color: rgb(40, 37, 61);
+    border-radius: 10px;
+}
+
+.navigation li {
+    padding: 10px 20px;            /* Add some padding for spacing */
+    cursor: pointer;               /* Change the cursor to pointer (optional) */
+}
+
+#nav-search ul{
+    background-color: rgb(40, 37, 61);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px auto;
+    padding: 10px 10px;
+    
+}
+
+/* Headers */
+h2 {
+    margin: 0px;
+}
+
+/* Links */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: turquoise;
+}
+
+/* Content */
+.section-style {
+    padding: 10px;
+    background-color: rgb(51, 69, 102);
+    /* background-color: rgb(68, 71, 100); */
+    width: 80%;
+    max-width: 300rem;
+    margin: 20px auto;
+    border-radius: 20px;
+    min-width: min-content;
+    /* height: 100vh; */ /*testing height*/
+}
+
+.flex-container{
+    background-color: rgb(76, 138, 167);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-items{
+    flex: 1 calc(10% - 10px); 
+    min-width: 150px;
+    padding: 5px;
+    border: rgb(62, 117, 143) 3px solid;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+/* Checkboxes */
+label:has(input:checked){
+    background-color: rgb(28, 29, 88);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#search{
+    max-width: 100px;
+}
+
+.ticked-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#ticked-items{
+    flex: 1;
+}
