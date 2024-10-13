@@ -69,16 +69,20 @@ a:hover{
 }
 
 /* Content */
+#menu{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .section-style {
     padding: 10px;
     background-color: rgb(51, 69, 102);
     /* background-color: rgb(68, 71, 100); */
-    width: 80%;
-    max-width: 300rem;
     margin: 20px auto;
     border-radius: 20px;
     min-width: min-content;
-    /* height: 100vh; */ /*testing height*/
 }
 
 .flex-container{
@@ -88,22 +92,39 @@ a:hover{
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .flex-items{
-    flex: 1 calc(10% - 10px); 
-    min-width: 150px;
-    padding: 5px;
+    flex: 1 calc(40% - 10px); 
     border: rgb(62, 117, 143) 3px solid;
     border-radius: 5px;
-    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    padding: 5px;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 600px) {
+    .flex-items {
+        flex: 1 100%; /* 1 item per row on smaller screens */
+    }
 }
 
 /* Checkboxes */
-label:has(input:checked){
-    background-color: rgb(28, 29, 88);
-    padding: 5px;
-    border-radius: 5px;
+
+label {
+    text-align: center; /* Ensure the label text is centered */
+    flex: 1; /* Ensure the label occupies remaining space */
+    white-space: nowrap; /* Prevent label from breaking into multiple lines */
+}
+
+/* Align the checkbox */
+input[type="checkbox"] {
+    margin-right: 10px; /* Add some space between checkbox and label */
+    cursor: pointer;
 }
 
 #search{

@@ -30,30 +30,111 @@ const breakfast = [
     {name: 'Coffee', calories: 200, cost: .50, category: 'Breakfast'},
     {name: 'Weetabix', calories: 100, cost: .50, category: 'Breakfast'},
     {name: 'Beans on Toast', calories: 400, cost: 1.0, category: 'Breakfast'},
-    {name: 'Toast', calories: 400, cost: 1.00, category: 'Breakfast'},
+    {name: 'Toast', calories: 400, cost: 1.00, category: 'Breakfast',
+        topping: ['Cheese','Blue Cheese', 'Marmite', 'Beans', 'Scrambled Egg']
+    },
     {name: 'Cheese on Toast', calories: 400, cost: 1.0, category:' Breakfast'},
     {name: 'Bacon Sandwich', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Fruit', calories: 400, cost: 1.50, category: 'Breakfast'},
-    {name: 'Yoghurt', calories: 400, cost: 1.50, category: 'Breakfast'}
+    {name: 'Pancakes', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Salmon Cream Cheese Bagel', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Bacon Roll', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Cheese Toastie', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Scrambled Egg on Toast', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Porridge', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Crumpets', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Overnight Oats', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Blue Cheese on Toast', calories: 400, cost: 1.50, category: 'Breakfast'},
 ];
 
 const lunch = [
     { name: 'Chicken Baguette', calories: 500, cost: 3.00, category: 'Lunch'},
     { name: 'Ceaser Salad', calories: 150, cost: 2.50, category: 'Lunch'},
     { name: 'Gyozas', calories: 600, cost: 2.00, category: 'Lunch'},
-    { name: 'Hot Dogs', calories: 600, cost: 2.00, category: 'Lunch'}
+    { name: 'Fried Chicken Wrap', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Bruschetta', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Roasted Courgette', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Ciabatta Steak Sandwich', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Ramen', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Pot Noodle', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Crispy Kale', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Bao Buns', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Cheesy Garlic Bread', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'French Vinegarette Salad', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Crisp Sandwich', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Antipasto', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Raw Veg & Dip', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Ceaser Salad', calories: 600, cost: 2.00, category: 'Lunch'},
 ];
 
 const dinner = [
-    { name: 'Steak', calories: 700, cost: 10.00, category: 'Dinner'},
-    { name: 'Pizza', calories: 400, cost: 8.00, category: 'Dinner'},
-    { name: 'Salmon Donburi', calories: 350, cost: 12.00, category: 'Dinner'}
+    { name: 'Steak', calories: 700, cost: 10.00, category: 'Dinner',
+        topping:['Lamb','Red Wine','Peppercorn']
+    },
+    { name: 'Pizza', calories: 400, cost: 8.00, category: 'Dinner',
+        topping:['Homemade','Tesco Deal']
+    },
+    { name: 'Salmon Donburi', calories: 350, cost: 12.00, category: 'Dinner'},
+    { name: 'Bolognese', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Lasagna', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Stew', calories: 400, cost: 8.00, category: 'Dinner',
+        topping:['Chicken','Beef', 'Lamb', 'Veg']
+    },
+    { name: 'Burger & Sides', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Puff Pastry Cottage Pie', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Roast Dinner', calories: 400, cost: 8.00, category: 'Dinner',
+        topping:['Chicken','Beef', 'Lamb']
+    },
+    { name: 'Chillie Con Carne', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Katsu Curry', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Honey & Soy Chicken', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Ceaser Salad', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Tikka Masala', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Chicken Supreme', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Wine Chicken', calories: 400, cost: 8.00, category: 'Dinner',
+        topping:['Red','White']
+    },
+    { name: 'Jerk Chicken', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Kebabs', calories: 400, cost: 8.00, category: 'Dinner',
+        topping: ['Chicken', 'Lamb', 'Beef', 'Chorizo & Halloumi']
+    },
+    { name: 'Chicken & Gravy', calories: 400, cost: 8.00, category: 'Dinner',
+        topping:['Rice', 'Veg']
+    },
+    { name: 'Chicken Satay', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Chicken Wings', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Honey Mustard Chicken', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Mushroom Pasta', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Carbonara', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Garlic Tomato Pasta', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'White Fish', calories: 400, cost: 8.00, category: 'Dinner',
+        topping:['White Sauce', 'Breaded']
+    },
+    { name: 'Salmon', calories: 400, cost: 8.00, category: 'Dinner',
+        topping:['Donburi', 'Glazed']
+    },
+    { name: 'No Mash Shepherds Pie', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Toad in the Hole', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Pork Belly', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Pork Chops', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Mushroom Soup', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Duck', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Stir Fry', calories: 400, cost: 8.00, category: 'Dinner'},
 ];
 
 const snacks = [
-    { name: 'Chips', calories: 200, cost: 1.00, category:'Snacks'},
-    { name: 'Fruit', calories: 100, cost: 0.50, category:'Snacks'},
-    { name: 'Lucozade', calories: 250, cost: 1.50, category:'Snacks'}
+    { name: 'Creme Brulee', calories: 200, cost: 1.00, category:'Snacks'},
+    { name: 'Brownies', calories: 100, cost: 0.50, category:'Snacks'},
+    { name: 'Lucozade', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Assorted Fruit', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Sticky Toffee Pudding', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Apple Crumble', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Pepperami', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Protein Yoghurt', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Crab Sticks', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Veg & Dip', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Smoked Mackrel', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Apple & Lemonade', calories: 250, cost: 1.50, category:'Snacks'},
 ];
 
 //Automatically generate the checkboxes
@@ -168,6 +249,10 @@ function clearSelections() {
     // Uncheck all checkboxes
     checkboxes.forEach((checkbox) => {
         checkbox.checked = false; // Uncheck each checkbox
+        checkbox.parentElement.style.backgroundColor = '';
+        checkbox.parentElement.style.padding = '';
+        checkbox.parentElement.style.borderRadius = '';
+        checkbox.parentElement.style.border = '';
     });
 
     // Update the display of currently ticked items
@@ -177,7 +262,39 @@ function clearSelections() {
 // Add event listener to the clear button
 document.getElementById('clear-selections').addEventListener('click', clearSelections);
 
+//Item Search
+function logItemTopping(itemName) {
+    // Search through all categories
+    const item = [...breakfast, ...lunch, ...dinner, ...snacks].find(dish => dish.name === itemName);
 
+    if (item) {
+        if (item.topping) {
+            console.log(`${itemName} toppings: ${item.topping.join(', ')}`);
+        } else {
+            console.log(`${itemName} has no toppings.`);
+        }
+    } else {
+        console.log(`${itemName} not found.`);
+    }
+}
+
+
+//STYLE CHECKBOXES
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            this.parentElement.style.backgroundColor = 'rgb(28, 29, 88)';
+            this.parentElement.style.padding = '5px';
+            this.parentElement.style.borderRadius = '5px';
+            this.parentElement.style.border = 'rgb(28, 29, 88) 3px solid';
+        } else {
+            this.parentElement.style.backgroundColor = '';
+            this.parentElement.style.padding = '';
+            this.parentElement.style.borderRadius = '';
+            this.parentElement.style.border = '';
+        }
+    });
+});
 
 //EXPORT
 function exportToCSV() {
