@@ -27,27 +27,28 @@ document.getElementById('toggle-ticked-items').addEventListener('click', functio
 
 // Breakfast List
 const breakfast = [
-    {name: 'Coffee', calories: 200, cost: .50, category: 'Breakfast'},
+    {name: 'Coffee Supplies', calories: 200, cost: .50, category: 'Breakfast'},
     {name: 'Weetabix', calories: 100, cost: .50, category: 'Breakfast'},
     {name: 'Beans on Toast', calories: 400, cost: 1.0, category: 'Breakfast'},
     {name: 'Toast', calories: 400, cost: 1.00, category: 'Breakfast',
         topping: ['Cheese','Blue Cheese', 'Marmite', 'Beans', 'Scrambled Egg']
     },
-    {name: 'Cheese on Toast', calories: 400, cost: 1.0, category:' Breakfast'},
-    {name: 'Bacon Sandwich', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Cheese on Toast', calories: 400, cost: 1.0, category:' Breakfast'},    
+    {name: 'Blue Cheese on Toast', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Bacon & Toast', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Bacon Roll', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Fruit', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Pancakes', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Salmon Cream Cheese Bagel', calories: 400, cost: 1.50, category: 'Breakfast'},
-    {name: 'Bacon Roll', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Cheese Toastie', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Scrambled Egg on Toast', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Porridge', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Crumpets', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Overnight Oats', calories: 400, cost: 1.50, category: 'Breakfast'},
-    {name: 'Blue Cheese on Toast', calories: 400, cost: 1.50, category: 'Breakfast'},
 ];
 
 const lunch = [
+    { name: 'Seaweed Salad', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Chicken Baguette', calories: 500, cost: 3.00, category: 'Lunch'},
     { name: 'Ceaser Salad', calories: 150, cost: 2.50, category: 'Lunch'},
     { name: 'Gyozas', calories: 600, cost: 2.00, category: 'Lunch'},
@@ -59,12 +60,11 @@ const lunch = [
     { name: 'Pot Noodle', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Crispy Kale', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Bao Buns', calories: 600, cost: 2.00, category: 'Lunch'},
-    { name: 'Cheesy Garlic Bread', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'French Vinegarette Salad', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Crisp Sandwich', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Antipasto', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Raw Veg & Dip', calories: 600, cost: 2.00, category: 'Lunch'},
-    { name: 'Ceaser Salad', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Chicken & Chip Box', calories: 800, cost: 2.00, category: 'Lunch'},
 ];
 
 const dinner = [
@@ -119,7 +119,9 @@ const dinner = [
     { name: 'Pork Chops', calories: 400, cost: 8.00, category: 'Dinner'},
     { name: 'Mushroom Soup', calories: 400, cost: 8.00, category: 'Dinner'},
     { name: 'Duck', calories: 400, cost: 8.00, category: 'Dinner'},
-    { name: 'Stir Fry', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Stir Fry Noodles', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Stir Fry Rice', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Chicken & Chip Box', calories: 800, cost: 2.00, category: 'Dinner'},
 ];
 
 const snacks = [
@@ -200,9 +202,16 @@ function addCheckBox(changeEvent) {
 
     if (changeEvent.target.checked) {
 
-        if (item.name === 'Toast'){
-            console.log(`${item.name} ticked`)
-        }
+        // if (item.name === 'Toast'){
+        //     console.log(`${item.name} ticked`)
+        // }
+
+        // if (item.topping) {
+        //     alert(`${item.name} selected with the following toppings: ${item.topping.join(', ')}`);
+        // } else {
+        //     alert(`${item.name} selected with no toppings.`);
+        // }
+
 
         // Add item to listTickedItems array if not there already 
         if (!listTickedItems.includes(item.name)) {
@@ -210,6 +219,7 @@ function addCheckBox(changeEvent) {
             amountTickedItems += 1;
             totalCost += item.cost; // Add the cost of the ticked item
         }
+
     } else {
         // Remove item from listTickedItems array
         const itemIndex = listTickedItems.indexOf(item.name);
@@ -295,6 +305,17 @@ checkboxes.forEach(checkbox => {
         }
     });
 });
+
+
+
+
+
+
+
+
+
+
+
 
 //EXPORT
 function exportToCSV() {
