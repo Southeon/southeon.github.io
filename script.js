@@ -306,18 +306,48 @@ checkboxes.forEach(checkbox => {
     });
 });
 
+//EXPORT TXT
+
+function exportToTXT() {
+    // Create a mapping of categories to their ticked items
+    const groupedItems = {};
+
+    // Iterate through listTickedItems to categorize them
+    listTickedItems.forEach(itemName => {
+        // Find the item in all categories
+        const foundItem = [...breakfast, ...lunch, ...dinner, ...snacks].find(item => item.name === itemName);
+        if (foundItem) {
+            // Use the category as the key
+            if (!groupedItems[foundItem.category]) {
+                groupedItems[foundItem.category] = []; // Initialize the array for this category
+            }
+            groupedItems[foundItem.category].push(foundItem.name); // Add the item name to the category array
+        }
+    });
+
+    // Prepare TXT content
+    let txtContent = "";
+
+    // Add each category and its items to the TXT content
+    for (const category in groupedItems) {
+        txtContent += `${category}\n`; // Write category name
+        txtContent += groupedItems[category].join(", ") + "\n\n"; // Write items under the category
+    }
+
+    // Create a downloadable link for the TXT
+    const encodedUri = encodeURI("data:text/plain;charset=utf-8," + txtContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "ticked_items_by_category.txt");
+    document.body.appendChild(link); // Required for FF
+
+    link.click(); // Trigger the download
+}
+
+document.getElementById('export-txt').addEventListener('click', exportToTXT);
 
 
-
-
-
-
-
-
-
-
-
-//EXPORT
+//EXPORT CSV
 function exportToCSV() {
     // Create a mapping of categories to their ticked items
     const groupedItems = {};
@@ -355,55 +385,57 @@ function exportToCSV() {
 }
 document.getElementById('export-csv').addEventListener('click', exportToCSV);
 
-// Function to send ticked items to Discord Webhook
-function sendToDiscord() {
-    // Create a mapping of categories to their ticked items
-    const groupedItems = {};
 
-    // Iterate through listTickedItems to categorize them
-    listTickedItems.forEach(itemName => {
-        // Find the item in all categories
-        const foundItem = [...breakfast, ...lunch, ...dinner, ...snacks].find(item => item.name === itemName);
-        if (foundItem) {
-            // Use the category as the key
-            if (!groupedItems[foundItem.category]) {
-                groupedItems[foundItem.category] = []; // Initialize the array for this category
-            }
-            groupedItems[foundItem.category].push(foundItem.name); // Add the item name to the category array
-        }
-    });
+//OLD DISCORD
+// // Function to send ticked items to Discord Webhook
+// function sendToDiscord() {
+//     // Create a mapping of categories to their ticked items
+//     const groupedItems = {};
 
-    // Construct the message to send to Discord
-    let message = "Here are the ticked items sorted by category:\n\n";
-    for (const category in groupedItems) {
-        message += `**${category}**:\n`; // Bold category name
-        message += groupedItems[category].join(", ") + "\n\n"; // Join items under the category
-    }
-        message += `Estimated Cost: £${totalCost.toFixed(2)}\n`; //add estimated cost
+//     // Iterate through listTickedItems to categorize them
+//     listTickedItems.forEach(itemName => {
+//         // Find the item in all categories
+//         const foundItem = [...breakfast, ...lunch, ...dinner, ...snacks].find(item => item.name === itemName);
+//         if (foundItem) {
+//             // Use the category as the key
+//             if (!groupedItems[foundItem.category]) {
+//                 groupedItems[foundItem.category] = []; // Initialize the array for this category
+//             }
+//             groupedItems[foundItem.category].push(foundItem.name); // Add the item name to the category array
+//         }
+//     });
 
-    // Send the message to Discord webhook
-    const webhookUrl = 'https://discord.com/api/webhooks/1294707485025894472/ID5Kczg5Ucw0MxuX94SQcaNSxPlwM9-s0wLMfcCtsZq0YPasBoHsyIprJaqbuXE76fO5'; // Replace with your actual webhook URL
-    const payload = {
-        content: message
-    };
+//     // Construct the message to send to Discord
+//     let message = "Here are the ticked items sorted by category:\n\n";
+//     for (const category in groupedItems) {
+//         message += `**${category}**:\n`; // Bold category name
+//         message += groupedItems[category].join(", ") + "\n\n"; // Join items under the category
+//     }
+//         message += `Estimated Cost: £${totalCost.toFixed(2)}\n`; //add estimated cost
 
-    fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        console.log('Message sent successfully!');
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
-}
+//     // Send the message to Discord webhook
+//     const webhookUrl = 'DELETED'; // Replace with your actual webhook URL
+//     const payload = {
+//         content: message
+//     };
 
-// Replace the CSV export button with the Discord export button
-document.getElementById('export-discord').addEventListener('click', sendToDiscord);
+//     fetch(webhookUrl, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(payload)
+//     })
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok ' + response.statusText);
+//         }
+//         console.log('Message sent successfully!');
+//     })
+//     .catch(error => {
+//         console.error('There was a problem with the fetch operation:', error);
+//     });
+// }
+
+// // Replace the CSV export button with the Discord export button
+// document.getElementById('export-discord').addEventListener('click', sendToDiscord);
