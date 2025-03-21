@@ -37,7 +37,7 @@ const breakfast = [
     {name: 'Blue Cheese on Toast', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Bacon & Toast', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Bacon Roll', calories: 400, cost: 1.50, category: 'Breakfast'},
-    {name: 'Fruit', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Fruit/Berries', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Pancakes', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Salmon Cream Cheese Bagel', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Cheese Toastie', calories: 400, cost: 1.50, category: 'Breakfast'},
@@ -45,6 +45,9 @@ const breakfast = [
     {name: 'Porridge', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Crumpets', calories: 400, cost: 1.50, category: 'Breakfast'},
     {name: 'Overnight Oats', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Catalan Bread', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Yoghurt', calories: 400, cost: 1.50, category: 'Breakfast'},
+    {name: 'Melon & Serrano Ham', calories: 400, cost: 1.50, category: 'Breakfast'},
 ];
 
 const lunch = [
@@ -61,10 +64,14 @@ const lunch = [
     { name: 'Crispy Kale', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Bao Buns', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'French Vinegarette Salad', calories: 600, cost: 2.00, category: 'Lunch'},
-    { name: 'Crisp Sandwich', calories: 600, cost: 2.00, category: 'Lunch'},
+    { name: 'Garlic Green Beans', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Antipasto', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Raw Veg & Dip', calories: 600, cost: 2.00, category: 'Lunch'},
     { name: 'Chicken & Chip Box', calories: 800, cost: 2.00, category: 'Lunch'},
+    { name: 'Hummus & Homemade Flatbread', calories: 800, cost: 2.00, category: 'Lunch'},
+    { name: 'Cripy Potato Balls', calories: 800, cost: 2.00, category: 'Lunch'},
+    { name: 'Catalan Bread', calories: 800, cost: 2.00, category: 'Lunch'},
+    { name: 'Stuffed Mushrooms', calories: 800, cost: 2.00, category: 'Lunch'},
 ];
 
 const dinner = [
@@ -88,7 +95,6 @@ const dinner = [
     { name: 'Chillie Con Carne', calories: 400, cost: 8.00, category: 'Dinner'},
     { name: 'Katsu Curry', calories: 400, cost: 8.00, category: 'Dinner'},
     { name: 'Honey & Soy Chicken', calories: 400, cost: 8.00, category: 'Dinner'},
-    { name: 'Ceaser Salad', calories: 400, cost: 8.00, category: 'Dinner'},
     { name: 'Tikka Masala', calories: 400, cost: 8.00, category: 'Dinner'},
     { name: 'Chicken Supreme', calories: 400, cost: 8.00, category: 'Dinner'},
     { name: 'Wine Chicken', calories: 400, cost: 8.00, category: 'Dinner',
@@ -122,9 +128,18 @@ const dinner = [
     { name: 'Stir Fry Noodles', calories: 400, cost: 8.00, category: 'Dinner'},
     { name: 'Stir Fry Rice', calories: 400, cost: 8.00, category: 'Dinner'},
     { name: 'Chicken & Chip Box', calories: 800, cost: 2.00, category: 'Dinner'},
+    { name: 'Marry Me Chicken', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Lamb Marinade', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Ribs & Sides', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Cajun Garlic Butter Steak & Potatoes', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Korean Popcorn Chicken', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Beef Cheek & Ale Pie', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Crispy Garlic Honey Chicken', calories: 400, cost: 8.00, category: 'Dinner'},
+    { name: 'Jollof Rice', calories: 400, cost: 8.00, category: 'Dinner'},
 ];
 
 const snacks = [
+    { name: 'Water', calories: 200, cost: 1.00, category:'Snacks'},
     { name: 'Creme Brulee', calories: 200, cost: 1.00, category:'Snacks'},
     { name: 'Brownies', calories: 100, cost: 0.50, category:'Snacks'},
     { name: 'Lucozade', calories: 250, cost: 1.50, category:'Snacks'},
@@ -137,6 +152,13 @@ const snacks = [
     { name: 'Veg & Dip', calories: 250, cost: 1.50, category:'Snacks'},
     { name: 'Smoked Mackrel', calories: 250, cost: 1.50, category:'Snacks'},
     { name: 'Apple & Lemonade', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Cheese Strings', calories: 250, cost: 1.50, category:'Snacks'},
+    { name: 'Hummus & Homemade Flatbread', calories: 800, cost: 2.00, category: 'Snacks'},
+    { name: 'Virgin Pina Colada', calories: 800, cost: 2.00, category: 'Snacks'},
+    { name: 'Virgin Mojito', calories: 800, cost: 2.00, category: 'Snacks'},
+    { name: 'Toilet Rolls', calories: 800, cost: 2.00, category: 'Snacks'},
+    { name: 'Bubblebath', calories: 800, cost: 2.00, category: 'Snacks'},
+    
 ];
 
 //Automatically generate the checkboxes
